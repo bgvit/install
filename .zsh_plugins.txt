@@ -1,0 +1,18 @@
+lukechilds/zsh-nvm
+junegunn/fzf
+
+robbyrussell/oh-my-zsh path:plugins/asdf
+robbyrussell/oh-my-zsh path:plugins/cp
+robbyrussell/oh-my-zsh path:plugins/colored-man-pages
+robbyrussell/oh-my-zsh path:plugins/direnv
+robbyrussell/oh-my-zsh path:plugins/docker
+robbyrussell/oh-my-zsh path:plugins/docker-compose
+robbyrussell/oh-my-zsh path:plugins/extract
+robbyrussell/oh-my-zsh path:plugins/ripgrep
+robbyrussell/oh-my-zsh path:plugins/kubectl
+
+romkatv/powerlevel10k
+
+rupa/z 
+
+zsh-users/zsh-syntax-highlighting
