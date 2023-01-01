@@ -1,5 +1,5 @@
 #Install nix
-#curl -L https://nixos.org/nix/install | sh
+curl -L https://nixos.org/nix/install | sh
 
 # source nix
 if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
@@ -30,5 +30,7 @@ sudo chsh -s $(which zsh) $USER
 source .zshrc
 cp .zsh_plugins.txt ~
 
-# install antibody plugins
+# TODO() -> Change antibody for antidote because it was deprecated
 antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
+
+# Develop installation of plugins.
