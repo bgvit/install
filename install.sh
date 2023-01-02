@@ -1,6 +1,6 @@
 # Creating this config file because it'll be used.
 mkdir $HOME/.config
-
+mkdir $HOME/.config/zsh
 #Install nix
 curl -L https://nixos.org/nix/install | sh
 
@@ -41,6 +41,10 @@ cp .zsh_plugins.txt ~
 
 # TODO() -> Change antibody for antidote because it was deprecated
 antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
+
+git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-$HOME/.config/zsh}/.antidote
+source ${ZDOTDIR:-$HOME/.config/zsh}/.antidote/antidote.zsh
+antidote load
 
 # Develop installation of plugins.
 
