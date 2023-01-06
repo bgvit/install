@@ -1,6 +1,7 @@
 # Creating this config file because it'll be used.
 mkdir $HOME/.config
 mkdir $HOME/.config/zsh
+
 #Install nix
 curl -L https://nixos.org/nix/install | sh
 
@@ -11,18 +12,24 @@ fi
 
 # install basic stuff
 nix-env -iA \
+    nixpkgs.alacritty \ #On mac doesn't create shortcut.app
     nixpkgs.antibody \
     nixpkgs.asdf-vm \
     nixpkgs.bat \
     nixpkgs.bottom \
+    nixpkgs.dbeaver \
     nixpkgs.direnv \
     nixpkgs.elixir \
+    nixpkgs.exa \
     nixpkgs.python \
-    nixpkgs.fzf \
     nixpkgs.gdu \
     nixpkgs.git \
     nixpkgs.git-extras \
     nixpkgs.go \
+    nixpkgs.jetbrains.idea-community \
+    nixpkgs.jetbrains.idea-ultimate \
+    nixpkgs.kubectl \
+    nixpkgs.kubectx \
     nixpkgs.lazygit \
     nixpkgs.neovim \
     nixpkgs.ripgrep \
@@ -39,12 +46,10 @@ sudo chsh -s $(which zsh) $USER
 source .zshrc
 cp .zsh_plugins.txt ~
 
-# TODO() -> Change antibody for antidote because it was deprecated
-antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
-
-git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-$HOME/.config/zsh}/.antidote
-source ${ZDOTDIR:-$HOME/.config/zsh}/.antidote/antidote.zsh
-antidote load
+#install zinit, zsh manager
+bash -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)"
+exec zsh
+zinit self-update
 
 # Develop installation of plugins.
 
